@@ -6,7 +6,12 @@
 //  Copyright (c) 2013 Brian Nickel. All rights reserved.
 //
 
-#import "KIFBackgroundingTests.h"
+#import <KIF.h>
+#import "KIFSystemTestActor+Suspend.h"
+
+@interface KIFBackgroundingTests : KIFTestCase
+@end
+
 
 @implementation KIFBackgroundingTests
 
@@ -26,7 +31,8 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in KIFBackgroundingTests");
+    [system suspendForTimeInterval:3 wait:YES];
+    [tester waitForTimeInterval:5];
 }
 
 @end
